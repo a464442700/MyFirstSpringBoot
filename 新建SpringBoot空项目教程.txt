@@ -1,0 +1,7 @@
+1. 打开 IDEA，选择 Create New Project。
+2. 在左侧面板中选择 Spring Initializr，然后点击 Next。
+3. 在 Spring Initializr 面板中，填写项目的基本信息，包括 Group、Artifact、Type、Java Version 等。
+4. 在 Dependencies 面板中选择需要使用的 Spring Boot 依赖，比如 Web、JPA、Thymeleaf 等。
+5. 点击 Next，选择项目的位置和名称，然后点击 Finish。
+6. IDEA 将会自动为你创建一个 Spring Boot 项目，然后会自动生成一些基本的代码和目录结构。
+注意：如果在创建过程中出现了问题，可以仔细检查应用配置文件和依赖项以及版本等信息是否正确。如果你还没有下载必要的依赖库，需要下载完整的 Maven 仓库，该过程可能需要一段时间。
