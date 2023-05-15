@@ -1,6 +1,8 @@
 package com.example.myfirstspringboot.service;
 
 import com.example.myfirstspringboot.model.Product;
+import org.springframework.beans.factory.config.BeanDefinition;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;

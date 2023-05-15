@@ -12,15 +12,18 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class ProductsController {
     private final ProductService productService;
+
     public ProductsController(ProductService productService) {
         this.productService = productService;
     }
+
     @GetMapping("/products")
     public String viewProducts(Model model) {
         var products = productService.findAll();
         model.addAttribute("products", products);
         return "products.html";
     }
+
     @PostMapping("/products")
     public String addProduct(
             @RequestParam String name,
