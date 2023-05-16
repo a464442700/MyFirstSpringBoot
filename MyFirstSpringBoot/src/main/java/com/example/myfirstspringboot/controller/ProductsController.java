@@ -2,6 +2,7 @@ package com.example.myfirstspringboot.controller;
 
 import com.example.myfirstspringboot.model.Product;
 import com.example.myfirstspringboot.service.ProductService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class ProductsController {
+    @Autowired
     private final ProductService productService;
 
     public ProductsController(ProductService productService) {
