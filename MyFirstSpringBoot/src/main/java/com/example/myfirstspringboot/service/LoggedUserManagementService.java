@@ -9,7 +9,7 @@ public class LoggedUserManagementService {
     private String username;
 
     public String getUsername() {
-        return username;
+        return username+this.hashCode();
     }
 
     public void setUsername(String username) {

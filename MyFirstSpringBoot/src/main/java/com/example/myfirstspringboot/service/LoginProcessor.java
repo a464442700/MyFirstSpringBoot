@@ -17,7 +17,9 @@ public class LoginProcessor {
         loginCountService.increment();
         String username = this.getUsername();
         String password = this.getPassword();
-        if ("apps".equals(username) && "123".equals(password)) {
+        if ("apps".equals(username) && "123".equals(password)
+        ||"sys".equals(username) && "123".equals(password)
+        ) {
             loggedUserManagementService.setUsername(username);
             return true;
         } else {
@@ -29,6 +31,7 @@ public class LoginProcessor {
             LoggedUserManagementService loggedUserManagementService,
             LoginCountService loginCountService
     ) {
+        System.out.println("创建LoginProcessor对象");
         this.loggedUserManagementService = loggedUserManagementService;
         this.loginCountService = loginCountService;
     }
