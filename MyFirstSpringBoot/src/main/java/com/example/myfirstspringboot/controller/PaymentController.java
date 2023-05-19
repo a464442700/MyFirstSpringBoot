@@ -27,15 +27,27 @@ public class PaymentController {
             @RequestHeader(required = false)  String requestId,
             @RequestBody Payment payment
     ) {
-        System.out.println("Received request with ID " + requestId +
-                " ;Payment Amount: " + payment.getAmount());
+
         payment.setId(UUID.randomUUID().toString());
+        payment.setStatus("支付成功");
+
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .header("requestId", requestId)
                 .body(payment);
     }
 
+    @PostMapping("/paymenttest")
+    public Payment createPaymenttest(
+            @RequestHeader(required = false)  String requestId,
+            @RequestBody Payment payment
+    ) {
+
+        payment.setId(UUID.randomUUID().toString());
+        payment.setStatus("支付成功");
+
+        return payment;
+    }
 //    @PostMapping("/payment")
 //    public ResponseEntity<?> makePayment(
 //            @RequestBody PaymentDetails obj

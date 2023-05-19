@@ -11,14 +11,18 @@ import java.util.UUID;
 @RestController
 public class PaymentsController {
     private final PaymentsProxy paymentsProxy;
+
     public PaymentsController(PaymentsProxy paymentsProxy) {
         this.paymentsProxy = paymentsProxy;
     }
-    @PostMapping("/payments")
+
+    @PostMapping("/openfeign/payments")
     public Payment createPayment(
             @RequestBody Payment payment
-    ) { System.out.println("PaymentsController");
+    ) {
+        System.out.println("调用payments");
         String requestId = UUID.randomUUID().toString();
+        payment.setAmount(payment.getAmount() - 1);
         return paymentsProxy.createPayment(requestId, payment);
     }
 }
